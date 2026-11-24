@@ -187,7 +187,7 @@ export const FAQS = [
       'Yes, major South African medical aids are accepted. Please bring your valid ID and medical aid card (or digital membership card) to your appointment.',
   },
   {
-    question: 'Do I need to book in advance for a Pregnancy Sonar or Chemical Peel?',
+    question: 'Do I need to book ahead for a Sonar or Chemical Peel?',
     answer:
       'Booking in advance is strongly recommended for Pregnancy Sonars and Chemical Peels & LED Therapy so we can reserve dedicated time for your session. You can request a slot directly using our online booking wizard above.',
   },

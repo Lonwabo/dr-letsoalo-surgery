@@ -280,7 +280,11 @@ export const ContactSection: React.FC = () => {
                     onClick={() => setOpenFaq(isOpen ? null : idx)}
                     className="w-full px-6 py-5 text-left flex items-center justify-between gap-4 cursor-pointer"
                   >
-                    <span className="text-sm sm:text-base font-semibold text-[#171A1C] dark:text-[#F3F5F7]">
+                    <span
+                      className={`text-sm sm:text-base font-semibold text-[#171A1C] dark:text-[#F3F5F7] min-w-0 flex-1 ${
+                        isOpen ? '' : 'truncate'
+                      }`}
+                    >
                       {faq.question}
                     </span>
                     <ChevronDown
