@@ -35,10 +35,11 @@ export const ContactSection: React.FC = () => {
       id="contact"
       className="py-20 sm:py-28 bg-[#F5EFEA]/70 dark:bg-[#12161B] border-t border-black/[0.05] dark:border-white/[0.06]"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-12 gap-12 items-start">
-          {/* Left Column: Direct Contact + FAQs */}
-          <div className="lg:col-span-5 space-y-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20">
+        {/* Top Row: Balanced Direct Contact Info + Contact Form */}
+        <div className="grid lg:grid-cols-12 gap-10 lg:gap-12 items-stretch">
+          {/* Left Column: Direct Contact Cards */}
+          <div className="lg:col-span-5 flex flex-col justify-between gap-6">
             <div className="space-y-3">
               <span className="inline-block text-xs font-bold uppercase tracking-[0.2em] text-[#C86D51] dark:text-[#E08B6F]">
                 Get in Touch
@@ -46,19 +47,18 @@ export const ContactSection: React.FC = () => {
               <h2 className="font-editorial text-3xl sm:text-4xl font-semibold text-[#171A1C] dark:text-[#F3F5F7]">
                 We&apos;re Here to Help
               </h2>
-              <p className="text-base text-[#525A62] dark:text-[#A5B0BC]">
+              <p className="text-base text-[#525A62] dark:text-[#A5B0BC] leading-relaxed">
                 Have a question about medical aid coverage, pregnancy sonars, or aesthetic
                 treatments? Reach out directly or send us a quick message.
               </p>
             </div>
 
-            {/* Direct Contact Cards */}
-            <div className="space-y-3">
+            <div className="space-y-3.5 flex-1 flex flex-col justify-center">
               <a
                 href={PRACTICE_INFO.phoneHref}
-                className="flex items-center gap-4 p-4 rounded-2xl bg-white dark:bg-[#161B20] border border-black/[0.06] dark:border-white/[0.08] hover:border-[#1F5C52] dark:hover:border-[#38A392] transition-colors group"
+                className="flex items-center gap-4 p-5 rounded-2xl bg-white dark:bg-[#161B20] border border-black/[0.06] dark:border-white/[0.08] hover:border-[#1F5C52] dark:hover:border-[#38A392] transition-colors group"
               >
-                <div className="w-11 h-11 rounded-xl bg-[#1F5C52]/10 dark:bg-[#38A392]/15 text-[#1F5C52] dark:text-[#38A392] flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
+                <div className="w-12 h-12 rounded-xl bg-[#1F5C52]/10 dark:bg-[#38A392]/15 text-[#1F5C52] dark:text-[#38A392] flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
                   <Phone className="w-5 h-5" />
                 </div>
                 <div>
@@ -73,9 +73,9 @@ export const ContactSection: React.FC = () => {
 
               <a
                 href={PRACTICE_INFO.emailHref}
-                className="flex items-center gap-4 p-4 rounded-2xl bg-white dark:bg-[#161B20] border border-black/[0.06] dark:border-white/[0.08] hover:border-[#C86D51] dark:hover:border-[#E08B6F] transition-colors group"
+                className="flex items-center gap-4 p-5 rounded-2xl bg-white dark:bg-[#161B20] border border-black/[0.06] dark:border-white/[0.08] hover:border-[#C86D51] dark:hover:border-[#E08B6F] transition-colors group"
               >
-                <div className="w-11 h-11 rounded-xl bg-[#F6D8CC]/60 dark:bg-[#C86D51]/20 text-[#B35437] dark:text-[#E08B6F] flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
+                <div className="w-12 h-12 rounded-xl bg-[#F6D8CC]/60 dark:bg-[#C86D51]/20 text-[#B35437] dark:text-[#E08B6F] flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
                   <Mail className="w-5 h-5" />
                 </div>
                 <div>
@@ -88,8 +88,8 @@ export const ContactSection: React.FC = () => {
                 </div>
               </a>
 
-              <div className="flex items-center gap-4 p-4 rounded-2xl bg-white dark:bg-[#161B20] border border-black/[0.06] dark:border-white/[0.08]">
-                <div className="w-11 h-11 rounded-xl bg-[#FAF8F5] dark:bg-[#1E242B] text-[#1F5C52] dark:text-[#38A392] flex items-center justify-center shrink-0">
+              <div className="flex items-center gap-4 p-5 rounded-2xl bg-white dark:bg-[#161B20] border border-black/[0.06] dark:border-white/[0.08]">
+                <div className="w-12 h-12 rounded-xl bg-[#FAF8F5] dark:bg-[#1E242B] text-[#1F5C52] dark:text-[#38A392] flex items-center justify-center shrink-0">
                   <MapPin className="w-5 h-5" />
                 </div>
                 <div>
@@ -99,55 +99,10 @@ export const ContactSection: React.FC = () => {
                   <p className="text-sm font-semibold text-[#171A1C] dark:text-[#F3F5F7]">
                     Westgate Mall · {PRACTICE_INFO.entranceNote}
                   </p>
+                  <p className="text-xs text-[#5A626A] dark:text-[#9CA5B0] mt-0.5">
+                    120 Ontdekkers Road, Roodepoort, 1724
+                  </p>
                 </div>
-              </div>
-            </div>
-
-            {/* FAQ Accordion */}
-            <div className="pt-2">
-              <h3 className="font-editorial text-xl font-semibold text-[#171A1C] dark:text-[#F3F5F7] mb-3">
-                Frequently Asked Questions
-              </h3>
-              <div className="space-y-2.5">
-                {FAQS.map((faq, idx) => {
-                  const isOpen = openFaq === idx;
-                  return (
-                    <div
-                      key={faq.question}
-                      className="rounded-2xl bg-white dark:bg-[#161B20] border border-black/[0.06] dark:border-white/[0.08] overflow-hidden"
-                    >
-                      <button
-                        type="button"
-                        onClick={() => setOpenFaq(isOpen ? null : idx)}
-                        className="w-full px-5 py-4 text-left flex items-center justify-between gap-4 cursor-pointer"
-                      >
-                        <span className="text-sm font-semibold text-[#171A1C] dark:text-[#F3F5F7]">
-                          {faq.question}
-                        </span>
-                        <ChevronDown
-                          className={`w-4 h-4 text-[#5A626A] shrink-0 transition-transform duration-200 ${
-                            isOpen ? 'rotate-180 text-[#1F5C52] dark:text-[#38A392]' : ''
-                          }`}
-                        />
-                      </button>
-                      <AnimatePresence initial={false}>
-                        {isOpen && (
-                          <motion.div
-                            initial={{ height: 0, opacity: 0 }}
-                            animate={{ height: 'auto', opacity: 1 }}
-                            exit={{ height: 0, opacity: 0 }}
-                            transition={{ duration: 0.22 }}
-                            className="overflow-hidden"
-                          >
-                            <p className="px-5 pb-4 text-sm text-[#5A626A] dark:text-[#9CA5B0] leading-relaxed">
-                              {faq.answer}
-                            </p>
-                          </motion.div>
-                        )}
-                      </AnimatePresence>
-                    </div>
-                  );
-                })}
               </div>
             </div>
           </div>
@@ -158,7 +113,7 @@ export const ContactSection: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.6 }}
-            className="lg:col-span-7 p-7 sm:p-10 rounded-[2rem] bg-white dark:bg-[#161B20] border border-black/[0.07] dark:border-white/[0.09] shadow-xl"
+            className="lg:col-span-7 p-7 sm:p-10 rounded-[2rem] bg-white dark:bg-[#161B20] border border-black/[0.07] dark:border-white/[0.09] shadow-xl flex flex-col justify-center"
           >
             {submitted ? (
               <div className="py-10 text-center space-y-5">
@@ -275,7 +230,7 @@ export const ContactSection: React.FC = () => {
                     Message *
                   </label>
                   <textarea
-                    rows={5}
+                    rows={4}
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
                     placeholder="How can we assist you today?"
@@ -299,6 +254,60 @@ export const ContactSection: React.FC = () => {
               </form>
             )}
           </motion.div>
+        </div>
+
+        {/* Bottom Row: Dedicated Full-Width 2-Column FAQ Grid */}
+        <div className="pt-14 border-t border-black/[0.06] dark:border-white/[0.08]">
+          <div className="text-center max-w-2xl mx-auto mb-10 space-y-2">
+            <span className="inline-block text-xs font-bold uppercase tracking-[0.2em] text-[#C86D51] dark:text-[#E08B6F]">
+              Quick Answers
+            </span>
+            <h3 className="font-editorial text-3xl sm:text-4xl font-semibold text-[#171A1C] dark:text-[#F3F5F7]">
+              Frequently Asked Questions
+            </h3>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-4 items-start">
+            {FAQS.map((faq, idx) => {
+              const isOpen = openFaq === idx;
+              return (
+                <div
+                  key={faq.question}
+                  className="rounded-2xl bg-white dark:bg-[#161B20] border border-black/[0.06] dark:border-white/[0.08] overflow-hidden shadow-xs"
+                >
+                  <button
+                    type="button"
+                    onClick={() => setOpenFaq(isOpen ? null : idx)}
+                    className="w-full px-6 py-5 text-left flex items-center justify-between gap-4 cursor-pointer"
+                  >
+                    <span className="text-sm sm:text-base font-semibold text-[#171A1C] dark:text-[#F3F5F7]">
+                      {faq.question}
+                    </span>
+                    <ChevronDown
+                      className={`w-4 h-4 text-[#5A626A] shrink-0 transition-transform duration-200 ${
+                        isOpen ? 'rotate-180 text-[#1F5C52] dark:text-[#38A392]' : ''
+                      }`}
+                    />
+                  </button>
+                  <AnimatePresence initial={false}>
+                    {isOpen && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: 'auto', opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.22 }}
+                        className="overflow-hidden"
+                      >
+                        <p className="px-6 pb-5 text-sm text-[#5A626A] dark:text-[#9CA5B0] leading-relaxed">
+                          {faq.answer}
+                        </p>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+              );
+            })}
+          </div>
         </div>
       </div>
     </section>

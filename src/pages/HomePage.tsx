@@ -210,28 +210,30 @@ export const HomePage: React.FC = () => {
                 </p>
               </div>
 
-              <div className="lg:col-span-5 flex flex-wrap lg:justify-end gap-3">
+              <div className="lg:col-span-5 flex flex-col gap-3 w-full max-w-md lg:ml-auto">
                 <Link
                   to="/book"
-                  className="inline-flex items-center gap-2 px-7 py-4 rounded-full bg-white hover:bg-[#F6D8CC] text-[#171A1C] font-semibold text-sm shadow-lg transition-colors"
+                  className="inline-flex items-center justify-center gap-2 w-full px-7 py-4 rounded-full bg-white hover:bg-[#F6D8CC] text-[#171A1C] font-semibold text-sm shadow-lg transition-colors"
                 >
-                  <Calendar className="w-4 h-4" />
+                  <Calendar className="w-4 h-4 shrink-0" />
                   <span>Book Appointment</span>
                 </Link>
-                <Link
-                  to="/contact"
-                  className="inline-flex items-center gap-2 px-6 py-4 rounded-full bg-white/12 hover:bg-white/20 border border-white/20 text-white font-semibold text-sm transition-colors"
-                >
-                  <MapPin className="w-4 h-4" />
-                  <span>Directions &amp; Map</span>
-                </Link>
-                <a
-                  href={PRACTICE_INFO.phoneHref}
-                  className="inline-flex items-center gap-2 px-5 py-4 rounded-full bg-black/20 hover:bg-black/30 text-white font-semibold text-sm transition-colors"
-                >
-                  <Phone className="w-4 h-4 text-[#F6D8CC]" />
-                  <span>{PRACTICE_INFO.phone}</span>
-                </a>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  <Link
+                    to="/contact"
+                    className="inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-full bg-white/12 hover:bg-white/20 border border-white/20 text-white font-semibold text-sm whitespace-nowrap transition-colors"
+                  >
+                    <MapPin className="w-4 h-4 shrink-0" />
+                    <span>Directions &amp; Map</span>
+                  </Link>
+                  <a
+                    href={PRACTICE_INFO.phoneHref}
+                    className="inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-full bg-black/20 hover:bg-black/30 border border-white/10 text-white font-semibold text-sm whitespace-nowrap transition-colors"
+                  >
+                    <Phone className="w-4 h-4 text-[#F6D8CC] shrink-0" />
+                    <span>{PRACTICE_INFO.phone}</span>
+                  </a>
+                </div>
               </div>
             </div>
           </motion.div>
